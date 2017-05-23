@@ -573,6 +573,103 @@ WHERE EXISTS (SELECT ProductName FROM Products WHERE SupplierId = Suppliers.supp
 CREATE DATABASE databasename;
 ```
 
+## SQL DROP DATABASE
+**deleting database**
+
+```
+DROP DATABASE testDB;
+```
+
+## SQL CREATE TABLE
+
+```
+CREATE TABLE Persons
+(
+PersonID int,
+LastName varchar(255),
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255)
+);
+```
+
+## SQL DROP TABLE
+
+**DROP TABLE (remove data and table itself)
+```
+DROP TABLE Shippers;
+```
+
+**TRUNCATE TABLE (remove data in table)
+
+## SQL ALTER TABLE
+**ADD COLUMN**
+
+```
+ALTER TABLE table_name
+ADD column_name datatype;
+```
+**DROP COLUMN**
+
+```
+ALTER TABLE table_name
+DROP COLUMN column_name;
+```
+**MODIFY COLUMN**
+
+```
+ALTER TABLE table_name
+ALTER COLUMN column_name datatype;
+```
+
+## SQL Contraints
+**SQL Contraints**
+   
+* NOT NULL: ensures that a column cannot have a NULL value
+* UNIQUE: ensures that all values in a column are different
+* PRIMARY KEY: a combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+* FOREIGN KEY: uniquely identifies a row/record in another table
+* CHECK: ensures that all values in a column satisfies a specific condition
+* DEFAULT: sets a default value for a column when no value is specified
+* INDEX: use to create and retrieve data from the dataase very quickly
+
+## -SQL NOT NULL
+**when you put nothing it shows error**
+
+```
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255) NOT NULL,
+    Age int
+);
+```
+
+## -SQL CHECK
+**put options in column**
+
+```
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CHECK (Age>=18)
+);
+```
+
+## -SQL DEFAULT
+**put default value in column**
+
+```
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    City varchar(255) DEFAULT 'Sandnes'
+);
+```
 
 
 
